@@ -1,0 +1,163 @@
+<html>
+<head>
+    <title>CS2 Lineups</title>
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-9UwM57KEzV_eKosB_UgfTqbeW-Al9CevhsDpucIorg&s">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style> 
+        body {
+            background-image: url("https://developer.valvesoftware.com/w/images/a/a9/Counter-Strike_2_Website_Background.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #add {
+            display: flex;
+            justify-content: center;
+            
+            font-size: 100px;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+
+            padding: 10px;
+
+            color: rgb(51, 51, 56);
+        }
+
+        #main h1 {
+            display: flex;
+            justify-content: center;
+
+            font-size: 70px;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+
+            color: rgb(51, 51, 56);
+        }
+
+        #maps {
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #ancient {
+            background-image: url("https://pbs.twimg.com/media/F3E1P_PXcAADatt?format=jpg&name=large");
+        }
+
+        #vertigo {
+            background-image: url("https://static.wikia.nocookie.net/cswikia/images/8/88/De_vertigo_cs2.jpg/revision/latest/scale-to-width-down/1200?cb=20231009185617");
+        }
+
+        #anubis {
+            background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2193876107321240926/4F3A2D9E8A51B390FC2B77407F9CBF0E60F555B9/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+        }
+
+        #mirage {
+            background-image: url("https://static.wikia.nocookie.net/counterstrike/images/1/12/Cs2mirage.jpg/revision/latest?cb=20230323194959&path-prefix=ru");
+        }
+
+        #dust2 {
+            background-image: url("https://static.wikia.nocookie.net/counter-strike-global-offensive/images/c/cf/Dust_2_CS2.webp/revision/latest?cb=20230902190630&path-prefix=pl");
+        }
+
+        #overpass {
+            background-image: url("https://static.wikia.nocookie.net/cswikia/images/5/55/Overpass_loading_screen.png/revision/latest/scale-to-width-down/1200?cb=20240426010535");
+        }
+
+        #nuke {
+            background-image: url("https://static.wikia.nocookie.net/cswikia/images/d/d6/De_nuke_cs2.png/revision/latest/scale-to-width-down/1200?cb=20240426010253");
+        }
+
+        #inferno {
+            background-image: url("https://static.wikia.nocookie.net/cswikia/images/1/17/Cs2_inferno_remake.png/revision/latest/scale-to-width-down/1200?cb=20240426005717");
+        }
+
+        .map {
+            
+            background-size:cover;
+            background-position: center;
+            background-repeat:no-repeat;
+
+            width: 300px;
+            height: 500px;
+
+            padding: 10px;
+            margin: 10px;
+            transition: 0.2s;
+
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+
+            box-shadow: 2px 2px 14px rgb(71, 71, 71);
+        }
+
+        .map img, p {
+            width: 100px;
+            height: 100px;
+            padding-top: 100px;
+            font-size: 40px;
+        }
+
+        .map:hover {
+            width: 280px;
+            height: 480px;
+            margin: 20px;
+        }
+    </style>  
+    
+</head>
+    <body>
+        <div id="main">
+            <h1> CS2 Lineups </h1>
+
+            <div id="maps">
+
+                <a href="exec_ancient.html"> <div id="ancient" class="map">
+                    <img src="https://static.wikia.nocookie.net/cswikia/images/7/7c/Map_icon_de_ancient.png/revision/latest/scale-to-width/360?cb=20230901185140">
+                </div> </a>
+
+                <a href="exec_vertigo.html"> <div id="vertigo" class="map">
+                    <img src="https://static.wikia.nocookie.net/cswikia/images/4/46/Vertigo-logo-new.png/revision/latest/scale-to-width/360?cb=20230901185803">
+                </div> </a>
+
+                <a href="exec_anubis.html"> <div id="anubis" class="map">
+                    <img src="https://static.wikia.nocookie.net/cswikia/images/f/f8/Map_icon_de_anubis.png/revision/latest/scale-to-width/360?cb=20230901185250">
+                </div> </a>
+
+                <a href="exec_mirage.html"> <div id="mirage" class="map">
+                    <img src="https://static.wikia.nocookie.net/cswikia/images/9/96/Set_mirage.png/revision/latest/scale-to-width/360?cb=20230901185633">
+                </div> </a>
+
+                <a href="exec_dust2.html"> <div id="dust2" class="map">
+                    <img src="https://static.wikia.nocookie.net/cswikia/images/d/db/Map_icon_de_dust2.png/revision/latest/scale-to-width/360?cb=20230901185539">
+                </div> </a>
+
+                <a href="exec_overpass.html"> <div id="overpass" class="map">
+                    <img src="https://static.wikia.nocookie.net/cswikia/images/3/3c/CS2_overpass_logo.png/revision/latest/scale-to-width/360?cb=20230901170006">
+                </div> </a>
+
+                <a href="exec_nuke.html"> <div id="nuke" class="map">
+                    <img src="https://static.wikia.nocookie.net/cswikia/images/e/ef/Set_nuke_2.png/revision/latest/scale-to-width/360?cb=20230901185652">
+                </div> </a>
+
+                <a href="exec_inferno.html"> <div id="inferno" class="map">
+                    <img src="https://static.wikia.nocookie.net/cswikia/images/0/0a/CS2_inferno_logo.png/revision/latest?cb=20230901170051">
+                </div> </a>
+
+            </div>
+
+        </div>
+    </body>
+
+    <script>
+
+    </script>
+</html>

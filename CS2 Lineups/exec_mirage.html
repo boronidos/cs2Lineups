@@ -1,0 +1,318 @@
+    <html>
+<head>
+    <title>Mirage Executes</title>
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-9UwM57KEzV_eKosB_UgfTqbeW-Al9CevhsDpucIorg&s">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style> 
+        body {
+            background-image: url("https://developer.valvesoftware.com/w/images/a/a9/Counter-Strike_2_Website_Background.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            font-size: 25px;    
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: rgb(36, 38, 54);
+
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #new_exec {
+            width: 1100px;
+            height: 700px;
+
+            position: absolute;
+            right: 27.5%;
+            top: 20%;
+
+            border-radius: 20px;
+
+            box-shadow: 2px 2px 50px rgb(36, 38, 54);
+
+            background-color: rgb(36, 38, 54);
+            color: rgb(212, 212, 216);
+
+            padding: 20px;
+        }
+
+        #lineup {
+            color: rgb(36, 38, 54);
+        }
+
+        input[type=file]::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        input[type=file] {
+            color: transparent;
+        }
+
+        input[type=file]::before {
+            content: 'Upload';
+            background: transparent;
+            border: none;
+            -webkit-user-select: none;
+
+            position: absolute;
+            top: 30px;
+            right: 120px;
+
+            font-size: 50px;    
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: rgb(36, 38, 54);
+        }
+
+        #exec_add_button {
+            color: rgb(36, 38, 54);
+            font-size: 100px;
+            position: absolute;
+            top: 0px;
+            right: 30px;
+        }
+
+        #new_exec input[type=text] {
+            background-color: rgb(24, 26, 37);
+            border: none;
+            width: 200px;
+            height: 25px;
+            margin: 5px;
+        }
+
+        #new_exec input[type=url] {
+            background-color: rgb(24, 26, 37);
+            border: none;
+            width: 300px;
+            height: 25px;
+            margin: 5px;
+        }
+
+        #new_exec input[type=number] {
+            background-color: rgb(24, 26, 37);
+            border: none;
+            width: 50px;
+            height: 25px;
+            margin: 5px;
+        }
+
+        #new_exec input[type=button] {
+            background-color: rgb(24, 26, 37);
+            border: none;
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+
+            display: flex;
+            justify-content: center;
+            justify-self: center;
+
+            font-size: 25px;    
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: rgb(212, 212, 216);
+
+            transition: 0.2s;
+        }
+
+        #new_exec input[type=button]:hover {
+            background-color: rgb(21, 20, 29);
+        }
+
+        iframe {
+            border: none;
+            width: 420;
+            height: 234;
+        }
+        
+        #main h1 {
+            display: flex;
+            justify-content: center;
+
+            font-size: 70px;    
+            color: rgb(36, 38, 54);
+        }
+
+        input, select, textarea{
+            color: rgb(212, 212, 216);
+        }
+
+        #execs {
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #exec {
+            font-size: 40px;    
+            color: rgb(36, 38, 54);
+
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+
+            flex-direction: row;
+        }
+
+        #lineup {
+            font-size: 20px;    
+            color: rgb(36, 38, 54);
+        }
+
+        .exec {
+            background-size:cover;
+            background-position: center;
+            background-repeat:no-repeat;
+
+            width: 300px;
+            height: 500px;
+
+            padding: 10px;
+            margin: 10px;
+            transition: 0.2s;
+
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+
+            box-shadow: 2px 2px 14px rgb(38, 38, 41);
+        }
+
+        .exec img, p {
+            width: 100px;
+            height: 100px;
+            padding-top: 100px;
+            font-size: 40px;
+        }
+
+        .exec:hover {
+            width: 280px;
+            height: 480px;
+            margin: 20px;
+        }
+    </style>  
+</head>
+    <body>
+        <div id="main">
+            <h1> Mirage Executes </h1>
+
+            <ppp onclick="add_exec()" id="exec_add_button"> + </ppp>
+            
+            <input type="file" id="upload" name="upload" value="upload">
+
+            <div id="execs"> </div>
+
+            <div id="new_exec" hidden="true">
+                <ppp style="justify-content: center; display: flex; font-size: 50px;"> Create new execute </ppp>
+                <br>
+                Execute name:<input type="text" id="name"> <br>
+                <br>
+                <input type="button" value="Add Lineup" onclick="create_lineup()"> <br>
+                <div id="new_lineups">
+
+                </div>
+                <input type="button" value="Create" onclick="create_exec()">
+                <input type="button" value="Cancel" onclick="cancel_exec()">   
+                
+            </div>
+        </div>
+    </body>
+
+    <script>
+        
+        var number_of_executes = 0;
+
+        function add_exec() {
+            document.getElementById("new_exec").hidden = false;
+        }
+
+        function cancel_exec() {
+            document.getElementById("new_exec").hidden = true;
+        }
+
+        function create_exec() {
+
+            // Get exec name
+            var name = document.getElementById("name").value;
+            
+            // Create new exec in code
+            var exec = document.createElement("div");
+            exec.id = "exec"
+            exec.innerHTML = name;
+            document.getElementById("execs").insertAdjacentElement("beforeend", exec);
+
+            // Create exec file
+
+            // Store lineup name and tutorial in a var
+            for (var i = 0; i < number_of_lineups; i++){
+                var lineup_name = document.getElementById("lineup_" + i).value;
+                var lineup_tutorial = document.getElementById("lineup_" + i + "_tutorial").value;
+
+                if (lineup_name == '' || lineup_tutorial == '') return;
+
+                var lineup = document.createElement("div")
+                lineup.id = "lineup";
+                lineup.innerHTML = '' + lineup_name + ' <br> Tutorial: <br> <iframe src="' + lineup_tutorial + '"> </iframe> <br> <br>';
+                document.getElementById("exec").insertAdjacentElement("beforeend", lineup);
+            }
+
+            document.getElementById("new_exec").hidden = true;
+            document.getElementById("new_lineups").innerHTML = '';
+            number_of_lineups = 0;
+            name.innerHTML = '';
+        }
+
+        var upload_file = document.getElementById("upload");
+
+        upload_file.addEventListener("change", ()=> {
+            let new_exec_file = new FileReader();
+            new_exec_file.readAsText(upload_file.files[0]);
+
+            new_exec_file.onload = function() {
+                var exec = document.createElement("div");
+                name = new_exec_file.result ;
+                exec.id = "exec"
+                exec.innerHTML = name;
+                document.getElementById("execs").insertAdjacentElement("beforeend", exec);            
+
+                number_of_executes++;
+            };
+
+        });
+
+        function save_execs() {
+            let save = document.getElementById("save");
+            
+            for (let i = 0; i < number_of_executes; i++) {
+                var exec = document.getElementById('exec_'+ number_of_executes);
+            }
+        }
+
+        var number_of_lineups = 0;
+
+        function create_lineup() {
+            // Create new lineup in code
+            var lineup = document.createElement("div");
+
+            // Create cusotm id
+            var lineupId = "lineup_" + number_of_lineups;
+            var lineupTutorialId = "lineup_" + number_of_lineups + "_tutorial"
+
+            // Populate Lineup with info
+            lineup.innerHTML = 'Name:<input type="text" id="' + lineupId + '"> <br> Tutorial: <input type="url" id="'+ lineupTutorialId +'"> <br><br>';
+
+            // place Lineup in lineups div
+            document.getElementById("new_lineups").insertAdjacentElement("beforeend", lineup);
+            number_of_lineups++;
+        }
+    </script>
+</html>
